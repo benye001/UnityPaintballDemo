@@ -247,4 +247,9 @@ public class GameManager : NetworkBehaviour
 				break;
 		}
 	}
+
+	public void NetworkSafe_SelectLocalPlayerFirearm(FirearmUniqueIdentifier firearmUniqueIdentifier)
+	{
+		LocalPlayerMainController.WeaponHandler.NetworkSafe_SelectFirearm(firearmUniqueIdentifier);
+	}
 }

@@ -57,7 +57,7 @@ public class FirearmSelectUIHandler : MonoBehaviour
 
     private void SelectFirearmFromCurrentIndex()
 	{
-        GameManager.Instance.LocalPlayerMainController.WeaponHandler.NetworkSafe_SelectFirearm(firearms[selectedIndex].FirearmUniqueIdentifier);
+        GameManager.Instance.NetworkSafe_SelectLocalPlayerFirearm(firearms[selectedIndex].FirearmUniqueIdentifier);
         UpdateUI();
     }
 
