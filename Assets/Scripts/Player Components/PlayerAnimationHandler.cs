@@ -26,6 +26,8 @@ public class PlayerAnimationHandler : NetworkBehaviour, IControlledByMainControl
 
 	private bool sprinting;
 
+	private AbstractCharacter selectedAbstractCharacter;
+	public AbstractCharacter SelectedAbstractCharacter => selectedAbstractCharacter;
 
 	[SyncVar(hook = nameof(OnSelectedCharacterNameChanged))] private CharacterName selectedCharacterName;
 	public CharacterName SelectedCharacterName => selectedCharacterName;
@@ -150,7 +152,7 @@ public class PlayerAnimationHandler : NetworkBehaviour, IControlledByMainControl
 		selectedCharacterName = newValue;
 
 		//create the new character
-		AbstractCharacter newAbstractCharacter = Characters.GetAbstractCharacterByName(selectedCharacterName);
+		AbstractCharacter newAbstractCharacter = selectedAbstractCharacter = Characters.GetAbstractCharacterByName(selectedCharacterName);
 		Transform newCharacterTransform = Instantiate(newAbstractCharacter.GetPrefab, characterContainer).transform;
 		newCharacterTransform.localPosition = Vector3.zero;
 		newCharacterTransform.localRotation = Quaternion.identity;

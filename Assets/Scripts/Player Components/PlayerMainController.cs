@@ -262,7 +262,10 @@ public class PlayerMainController : NetworkBehaviour
             LayerTools.SetLayerRecursively(firearmContainer.gameObject, 9); //9 == FirstPerson layer
 
             firstPersonCharacterUniqueReferenceHandler.SetRuntimeAnimatorController(firstPersonRuntimeAnimatorController);
-
+            if (animationHandler.SelectedAbstractCharacter != null)
+            {
+                firstPersonCharacterUniqueReferenceHandler.Animator.SetTrigger(animationHandler.SelectedAbstractCharacter.Name.ToString() + "PoseAdjustment");
+            }
 		}
 
         waitToSetFirearmPrefabContainer = null;
