@@ -12,6 +12,8 @@ Featuring:
 - Visible paintballs with bullet drop, authoritatively controlled by the host machine, but simulated on each client individually for instantaneous feedback.
 - Designer-friendly controls for each firearms bullet profile, such as projectile speed, drop rate and damage.
 
+https://benpav001.wordpress.com/portfolio-2/
+
 Thanks for checking out my recent work! I’d love to get in touch.
 
 (314) 337-4841  •  benpav001@gmail.com
